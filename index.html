@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#fff9f6" />
+    <meta
+      name="description"
+      content="Маленький романтичний турнір: обирай між ідеями побачень та знайди наш топ-3."
+    />
+    <title>Наше ідеальне побачення ♡</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <div class="page-blob blob-a" aria-hidden="true"></div>
+    <div class="page-blob blob-b" aria-hidden="true"></div>
+    <div class="site-shell">
+      <header class="site-header">
+        <div class="brand">
+          <span class="brand-icon" aria-hidden="true">♡</span> ours<span
+            class="brand-dot"
+            >.</span
+          >date
+        </div>
+        <span class="header-tag">тільки для нас двох ✨</span>
+      </header>
+
+      <main>
+        <!-- Вітання -->
+        <section
+          class="screen intro-screen"
+          id="intro-screen"
+          aria-labelledby="intro-title"
+        >
+          <div class="intro-sticker sticker-left" aria-hidden="true">✿</div>
+          <div class="intro-sticker sticker-right" aria-hidden="true">✧</div>
+          <div class="intro-hero">
+            <span class="eyebrow"
+              ><span class="eyebrow-sparkle">✦</span> МАЛЕНЬКА ГРА ДЛЯ НАС
+              <span class="eyebrow-sparkle">✦</span></span
+            >
+            <div class="intro-emblem" aria-hidden="true">
+              <span class="emblem-back">♡</span
+              ><span class="emblem-front">♥</span>
+            </div>
+            <h1 id="intro-title">Обираємо наш<br /><em>наступний вечір</em></h1>
+            <p class="intro-description">
+              Я підготувала для нас декілька ідей затишного побачення. Хочеться
+              провести час разом, трохи відволіктися від буденності, смачно
+              поїсти, повеселитися й створити маленькі спільні спогади.
+            </p>
+            <p class="intro-invite">
+              Ось що я пропоную: обирай серцем, а сайт визначить наш топ-3 💗
+            </p>
+            <div class="stat-pills">
+              <span>7 ідей</span
+              ><span class="pill-heart" aria-hidden="true">♡</span
+              ><span>топ-3 наприкінці</span>
+            </div>
+            <button
+              class="primary-button large-button"
+              id="start-button"
+              type="button"
+            >
+              Обирати побачення <span aria-hidden="true">→</span>
+            </button>
+            <div class="intro-tip">
+              <span aria-hidden="true">💌</span> Це займе кілька хвилин.
+            </div>
+          </div>
+        </section>
+
+        <!-- Турнір: дві великі картки одна під одною, щоби фото залишались атмосферними -->
+        <section
+          class="screen battle-screen"
+          id="battle-screen"
+          aria-labelledby="battle-title"
+          hidden
+        >
+          <div class="round-header">
+            <div class="round-heading">
+              <span class="eyebrow" id="stage-overline">РАУНД 1 / 4</span>
+              <h2 id="battle-title">Знайомимося з ідеями</h2>
+              <p id="stage-subtitle" class="round-subtitle">
+                Роздивися обидві ідеї та обери ту, яка подобається більше.
+              </p>
+            </div>
+            <div class="round-counter" aria-live="polite">
+              <span id="completed-count">0</span
+              ><span class="counter-separator">/</span>7
+            </div>
+          </div>
+          <div
+            class="progress-dots"
+            id="progress-dots"
+            aria-label="Прогрес турніру"
+          ></div>
+          <div class="match-caption">
+            <span class="twinkle">✧</span> ЯКУ ІДЕЮ ОБИРАЄШ?
+            <span class="twinkle">✧</span>
+          </div>
+          <div class="duel" id="duel">
+            <article class="date-card" id="date-card-left">
+              <div class="date-image" id="date-art-left">
+                <img id="date-photo-left" alt="" hidden />
+                <div class="date-image-fallback" id="date-fallback-left">
+                  <span class="image-emoji" id="date-emoji-left">♡</span>
+                  <span class="image-hint">ТВОЄ ФОТО</span>
+                </div>
+                <span class="photo-corner-label">A</span>
+              </div>
+              <div class="date-card-details">
+                <div class="idea-number" id="date-number-left">ІДЕЯ 01</div>
+                <h3 id="date-title-left">Назва ідеї</h3>
+                <p id="date-description-left">Тут буде опис твого побачення.</p>
+                <button
+                  type="button"
+                  class="description-toggle"
+                  id="expand-left"
+                  aria-expanded="false"
+                  aria-controls="date-description-left"
+                >
+                  Читати повністю ↓
+                </button>
+                <button
+                  type="button"
+                  class="pick-button"
+                  id="choose-left"
+                  aria-label="Обрати ліву ідею"
+                >
+                  Обираю <span aria-hidden="true">♡</span>
+                </button>
+              </div>
+            </article>
+            <div class="vs-badge" aria-hidden="true">VS</div>
+            <article class="date-card" id="date-card-right">
+              <div class="date-image" id="date-art-right">
+                <img id="date-photo-right" alt="" hidden />
+                <div class="date-image-fallback" id="date-fallback-right">
+                  <span class="image-emoji" id="date-emoji-right">♡</span>
+                  <span class="image-hint">ТВОЄ ФОТО</span>
+                </div>
+                <span class="photo-corner-label">B</span>
+              </div>
+              <div class="date-card-details">
+                <div class="idea-number" id="date-number-right">ІДЕЯ 02</div>
+                <h3 id="date-title-right">Назва ідеї</h3>
+                <p id="date-description-right">
+                  Тут буде опис твого побачення.
+                </p>
+                <button
+                  type="button"
+                  class="description-toggle"
+                  id="expand-right"
+                  aria-expanded="false"
+                  aria-controls="date-description-right"
+                >
+                  Читати повністю ↓
+                </button>
+                <button
+                  type="button"
+                  class="pick-button"
+                  id="choose-right"
+                  aria-label="Обрати праву ідею"
+                >
+                  Обираю <span aria-hidden="true">♡</span>
+                </button>
+              </div>
+            </article>
+          </div>
+          <div class="battle-actions">
+            <button type="button" class="subtle-button" id="undo-button">
+              <span aria-hidden="true">↶</span> Назад
+            </button>
+            <button type="button" class="subtle-button" id="skip-button">
+              Пропустити поки що <span aria-hidden="true">↝</span>
+            </button>
+          </div>
+          <div class="swipe-hint">
+            Прокрути трохи нижче, щоб побачити другий варіант ♡
+          </div>
+          <p
+            class="notice"
+            id="battle-notice"
+            role="status"
+            aria-live="polite"
+          ></p>
+        </section>
+
+        <!-- Результати -->
+        <section
+          class="screen results-screen"
+          id="results-screen"
+          aria-labelledby="results-title"
+          hidden
+        >
+          <div class="result-confetti" aria-hidden="true">
+            ✦ &nbsp; ♡ &nbsp; ✦
+          </div>
+          <div class="results-topline">УРА, МИ ВИЗНАЧИЛИСЯ!</div>
+          <h2 id="results-title">Наш <em>топ-3</em><br />побачень</h2>
+          <p class="results-lead">
+            Я буду рада будь-якому варіанту, головне — провести цей вечір разом
+            із тобою 🥰
+          </p>
+          <div class="results-list" id="results-list"></div>
+          <div class="email-panel">
+            <div class="email-icon">✉</div>
+            <div>
+              <h3>Результати летять на пошту 💌</h3>
+              <p>
+                Після фінального вибору сайт автоматично надішле топ-3.
+                Натискати нічого не потрібно! Тут з’явиться статус надсилання.
+              </p>
+            </div>
+            <p
+              class="email-state"
+              id="email-state"
+              role="status"
+              aria-live="polite"
+            ></p>
+            <div class="result-buttons">
+              <button
+                type="button"
+                class="outline-button"
+                id="copy-results-button"
+              >
+                Скопіювати результат
+              </button>
+            </div>
+          </div>
+          <button class="restart-button" id="restart-button" type="button">
+            Пройти ще раз <span aria-hidden="true">↻</span>
+          </button>
+        </section>
+      </main>
+
+      <footer class="footer">
+        зроблено з любов'ю <span aria-hidden="true">♥</span> для наших маленьких
+        моментів
+      </footer>
+    </div>
+  </body>
+</html>
